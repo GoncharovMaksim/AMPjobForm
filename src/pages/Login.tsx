@@ -32,7 +32,7 @@ export default function Login() {
         <Input.Password
           size="large"
           placeholder="Password"
-          iconRender={() => <LockOutlined />}
+          prefix={<LockOutlined />}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />

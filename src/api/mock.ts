@@ -70,7 +70,7 @@ export async function verifyOtp(req: OtpRequest): Promise<OtpResponse> {
     throw new ApiError("NETWORK_ERROR", "Network error", 0);
   }
 
-  if (code !== "131313") {
+  if (code !== "131311") {
     throw new ApiError("INVALID_CODE", "Invalid code", 401);
   }
 

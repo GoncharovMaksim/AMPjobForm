@@ -42,17 +42,21 @@ export default function AuthLayout({ titleText, children }: AuthLayoutProps) {
                   width: 24,
                   height: 24,
                   background: "#1677FF",
-                  borderRadius: 9999,
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
-              />
-              <div
-                style={{
-                  width: 12,
-                  height: 12,
-                  background: "#D9D9D9",
-                  borderRadius: 9999,
-                }}
-              />
+              >
+                <div
+                  style={{
+                    width: 12,
+                    height: 12,
+                    background: "#fff",
+                    borderRadius: "50%",
+                  }}
+                />
+              </div>
               <Text strong style={{ marginLeft: 9 }}>
                 Company
               </Text>
