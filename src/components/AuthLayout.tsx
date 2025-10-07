@@ -1,5 +1,7 @@
 import React from "react";
 import { Flex, Typography } from "antd";
+import { ArrowLeftOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const { Text } = Typography;
 
@@ -9,6 +11,7 @@ type AuthLayoutProps = {
 };
 
 export default function AuthLayout({ titleText, children }: AuthLayoutProps) {
+  const navigate = useNavigate();
   return (
     <Flex
       vertical
@@ -25,8 +28,21 @@ export default function AuthLayout({ titleText, children }: AuthLayoutProps) {
           padding: 32,
           borderRadius: 6,
           gap: 24,
+          position: "relative",
         }}
       >
+        {/* Стрелка назад в верхнем левом углу */}
+        <ArrowLeftOutlined
+          style={{
+            fontSize: 22,
+            cursor: "pointer",
+            position: "absolute",
+            top: 24,
+            left: 24,
+            zIndex: 2,
+          }}
+          onClick={() => navigate(-1)}
+        />
         <Flex vertical align="center" style={{ gap: 4 }}>
           <div
             style={{
@@ -62,7 +78,14 @@ export default function AuthLayout({ titleText, children }: AuthLayoutProps) {
               </Text>
             </div>
           </div>
-          {titleText ? <Text>{titleText}</Text> : null}
+          {titleText ? (
+            <Text
+              strong
+              style={{ fontSize: 28, fontWeight: 700, lineHeight: 1.2 }}
+            >
+              {titleText}
+            </Text>
+          ) : null}
         </Flex>
 
         {children}
